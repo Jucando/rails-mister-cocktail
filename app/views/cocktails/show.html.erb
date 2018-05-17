@@ -1,0 +1,15 @@
+<h1><%= @cocktail.name %></h1>
+  <div class="add-dose">
+    <h2>Ingredients</h2>
+    <% @cocktail.doses.each  do |dose| %>
+      <p>
+        <strong><%= dose.ingredient.name %></strong>
+        &nbsp;-&nbsp;
+        <%= dose.description %>
+        &nbsp;-&nbsp;
+        <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, dose_path(dose.id), method: :delete %>
+      </p>
+    <% end %>
+    <%= render '/doses/form' %>
+  </div>
+<%= link_to "Back", cocktails_path %>
