@@ -47,6 +47,10 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :description, :img_url)
+    if params["cocktail"]["photo"].nil?
+      @upload = Cloudinary::Uploader.upload(params["cocktail"]["img_url"])
+      params["cocktail"]["img_url"] = @upload["url"]
+    end
+    params.require(:cocktail).permit(:name, :description, :img_url, :photo)
   end
 end

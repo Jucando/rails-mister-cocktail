@@ -1,6 +1,11 @@
-<%= simple_form_for (@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :img_url %>
-  <%= f.submit "Add this cocktail" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for (@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <p> OR </p>
+    <%= f.input :img_url %>
+    <%= f.submit "Add this cocktail" %>
+  <% end %>
+</div>

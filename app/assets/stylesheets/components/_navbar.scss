@@ -1,14 +1,43 @@
 /* Main navbar */
+#banner-typed-text{
+  animation: 3s multicolor;
+  animation-iteration-count:infinite;
+}
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: #353B3C;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 18px;
 }
+.navbar-wagon i {
+  color: $dynamic-green;
+  font-size: 22px;
+}
+.navbar-wagon i:hover {
+  opacity: 0.7;
+  animation: 3s multicolor;
+  animation-iteration-count:infinite;
+}
+@keyframes multicolor {
+    0% {
+        color: $dynamic-green;
+    }
+    33% {
+        color: #FF0000;
+    }
+    66% {
+        color: #0000FF;
+    }
+    100% {
+        color: $pink;
+    }
+}
+
 
 /* Logo */
 .navbar-wagon-brand img {
@@ -37,12 +66,13 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: $dynamic-green;
+  font-size: 18px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $dynamic-green;
   text-decoration: none;
+  opacity: 0.8;
 }
 
 /* Dropdown menu */
@@ -55,7 +85,7 @@
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
-  font-size: 15px !important;
+  font-size: 18px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }

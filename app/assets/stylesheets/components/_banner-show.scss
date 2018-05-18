@@ -1,4 +1,33 @@
 .banner-show {
-  height: 350px;
+  height: 500px;
   background-size: cover;
+}
+.banner-show p{
+  color: $light-gray;
+  font-wieght: lighter;
+  font-size: 26px;
+}
+
+.banner-show h1{
+  font-size: 80px;
+  margin-top: 0px;
+}
+.banner-show .optional{
+  color: $light-gray;
+}
+
+.banner-show a{
+  font-size: 18px;
+  color: $dynamic-green;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.description-box {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+  padding-top: 20px;
 }

@@ -1,5 +1,12 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.img_url %>);">
+<div class="banner-show" style="background-image: linear-gradient(rgba(201,94,218,0.3), rgba(56,62,62,0.4)), url(
+<% if @cocktail["photo"].nil? %>
+<%= @cocktail.img_url %>
+<% else %>
+<%= cl_image_path @cocktail.photo %>
+<% end %>
+);">
   <div class="container">
+    <div class="description-box">
     <h1 class="text-white"><%= @cocktail.name %> <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, cocktail_path(@cocktail.id), method: :delete %></h1>
     <p class="text-white">
       <% if @in_update == false %>
@@ -8,6 +15,7 @@
     <% else %>
       <%= render '/cocktails/form_edit' %>
     <% end %>
+    </div>
   </div>
 </div>
 <div class="container card-details-parent">
@@ -26,5 +34,4 @@
       <%= render '/doses/form' %>
     </div>
   </div>
-  <%= link_to "Back", cocktails_path %>
 </div>
