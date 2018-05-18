@@ -7,7 +7,7 @@
 );">
   <div class="container">
     <div class="description-box">
-    <h1 class="text-white"><%= @cocktail.name %> <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, cocktails_path, method: :delete %></h1>
+    <h1 class="text-white"><%= @cocktail.name %> <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, cocktail_path(@cocktail), method: :delete %></h1>
     <p class="text-white">
       <% if @in_update == false %>
       <%= @cocktail.description %> <%= link_to '<i class="fas fa-edit"></i>'.html_safe, "#", method: :patch %>
